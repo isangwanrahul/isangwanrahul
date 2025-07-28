@@ -1,0 +1,30 @@
+To keep your latest commit and remove the next two (i.e. the ones that came before), you can use an interactive rebase in Git. Here's how to do it step by step:
+
+### 🛠️ Rebase to Remove Previous Commits
+```bash
+git rebase -i HEAD~3
+```
+
+- This opens your editor with a list of the last 3 commits.
+- The commits are listed from oldest to newest, so the **top two** are the ones you want to delete, and the last one is the one you want to keep.
+
+### 🚮 Remove the Old Commits
+In the editor:
+- Change the word `pick` to `drop` (or just delete the lines) for the first **two commits**.
+- Leave the last one (your most recent) as `pick`.
+
+Example:
+```
+drop abc123 Old commit 1
+drop def456 Old commit 2
+pick ghi789 Latest commit
+```
+
+Save and close the editor. Git will reapply just the latest commit.
+
+> 💡 If those earlier commits have already been pushed to a remote, you'll need to force-push:
+```bash
+git push origin main --force
+```
+
+Let me know if you want to undo this later, or if you’re working with branches or merges—I can tailor the instructions!
