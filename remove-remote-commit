@@ -1,0 +1,38 @@
+To delete a commit from a remote Git repository, you’ll need to rewrite history locally and then **force-push** the changes. Here's how you can do it carefully:
+
+---
+
+### 🧹 Step-by-Step: Remove a Remote Commit
+
+1. **Check your commit history**
+   ```bash
+   git log --oneline
+   ```
+   Find the hash of the commit you want to remove.
+
+2. **Revert or reset**
+   Depending on where the commit is located:
+   
+   - **If it's the latest commit**, use:
+     ```bash
+     git reset --hard HEAD~1
+     ```
+     (This removes the last commit locally.)
+
+   - **If it’s older**, do an interactive rebase:
+     ```bash
+     git rebase -i HEAD~n
+     ```
+     Replace `n` with the number of recent commits you want to view. Then mark the one you want to delete as `drop` in your editor.
+
+3. **Force-push to the remote**
+   ⚠️ This step can rewrite history on the remote and affect others:
+   ```bash
+   git push origin main --force
+   ```
+   Replace `main` with your branch name.
+
+---
+
+### ⚠️ Use with Caution
+Force-pushing can disrupt collaborators if you're on a shared branch. If others have already pulled the deleted commit, they may experience conflicts.
