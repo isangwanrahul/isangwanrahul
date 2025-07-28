@@ -1,0 +1,32 @@
+Great! If you want to **keep the changes from a commit but remove the commit itself**, the cleanest way is to use `git reset` and then stage the changes manually. Here's how to do it:
+
+---
+
+### 🧤 Preserve Changes, Remove Commit
+
+1. **Soft reset to move HEAD**
+   This keeps the changes in your working directory:
+   ```bash
+   git reset --soft HEAD~1
+   ```
+   Replace `HEAD~1` with the commit you want to remove (e.g. `HEAD~2` for two commits back).
+
+   ✅ This removes the commit but leaves the changes staged.
+
+2. **Optional: Unstage the changes**
+   If you want the changes unstaged (in working dir only):
+   ```bash
+   git reset
+   ```
+
+3. **Create a new commit**
+   You can now recommit the preserved changes with a cleaner message:
+   ```bash
+   git commit -m "New commit with preserved changes"
+   ```
+
+4. **Force push to remote**
+   Since history changed:
+   ```bash
+   git push origin <branch-name> --force
+   ```
