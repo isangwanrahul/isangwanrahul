@@ -26,5 +26,3 @@ Save and close the editor. Git will reapply just the latest commit.
 ```bash
 git push origin main --force
 ```
-
-Let me know if you want to undo this later, or if you’re working with branches or merges—I can tailor the instructions!
