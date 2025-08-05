@@ -38,3 +38,40 @@ feat(cart): add item count display
 - Clear commit history
 - Easy integration with tools like semantic-release for automated versioning
 - Consistency across teams
+
+Here several examples of Conventional Commit messages tailored to common types of updates—you can tweak them based on your project or feature area:
+
+---
+
+### 🔧 Code Changes
+```text
+feat(login): add OAuth support for Google sign-in
+fix(payment): resolve double-charge issue on checkout
+refactor(profile): clean up state management logic
+```
+
+### 📚 Documentation
+```text
+docs(readme): update setup instructions for dev environment
+docs(api): add usage examples for GET /users endpoint
+```
+
+### 🧪 Testing
+```text
+test(cart): add unit tests for item removal
+test(auth): mock API calls for login flow tests
+```
+
+### 🎨 Styling and Layout
+```text
+style(header): align logo and navigation links
+style(buttons): apply consistent padding and colors
+```
+
+### 🧹 Maintenance and Chores
+```text
+chore(deps): update react to v18.2.0
+chore(ci): add GitHub Actions for lint and test
+```
+
+---
