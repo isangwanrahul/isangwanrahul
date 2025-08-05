@@ -1,0 +1,40 @@
+### 📦 Conventional Commit Format
+
+```text
+<type>[optional scope]: <description>
+```
+
+#### ✅ Example
+```text
+feat(auth): add login functionality
+fix(api): handle 500 error in user endpoint
+docs(readme): update installation instructions
+```
+
+---
+
+### 🔧 Common Types
+| Type      | Purpose                                               |
+|-----------|--------------------------------------------------------|
+| `feat`    | A new feature                                          |
+| `fix`     | A bug fix                                              |
+| `docs`    | Documentation-only changes                            |
+| `style`   | Changes that don't affect meaning (e.g., formatting)  |
+| `refactor`| Code change that neither fixes a bug nor adds a feature |
+| `test`    | Adding or modifying tests                             |
+| `chore`   | Routine tasks like updates to build tools or dependencies |
+
+---
+
+### 🌱 Optional Scope
+Use it to specify the area of the codebase affected:
+```text
+feat(cart): add item count display
+```
+
+---
+
+### ⚙️ Why Use It?
+- Clear commit history
+- Easy integration with tools like semantic-release for automated versioning
+- Consistency across teams
